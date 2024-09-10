@@ -1,4 +1,4 @@
-import 'package:calieo/application/route.dart';
+import 'package:svgtool/application/route.dart';
 import 'package:flutter/material.dart';
 
 class HuableApplication extends StatefulWidget {
@@ -28,7 +28,6 @@ class _HuableApplicationState extends State<HuableApplication> {
   }
 }
 
-
 Future<Widget> initApp() async {
-    return const HuableApplication();
+  return const HuableApplication();
 }

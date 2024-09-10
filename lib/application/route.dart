@@ -3,7 +3,7 @@ import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:calieo/application/pages/desktop/home.dart';
+import 'package:svgtool/application/pages/desktop/home.dart';
 import 'pages/mobile/home.dart';
 import 'pages/web/home.dart';
 

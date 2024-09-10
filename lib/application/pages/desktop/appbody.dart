@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:calieo/application/components/loading.dart';
+import 'package:svgtool/application/components/loading.dart';
 
 import 'navbar.dart';
 
