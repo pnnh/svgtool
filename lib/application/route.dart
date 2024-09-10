@@ -3,13 +3,8 @@ import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:polaris/application/pages/desktop/home.dart';
-
-import 'pages/desktop/pictures/pictures.dart';
+import 'package:calieo/application/pages/desktop/home.dart';
 import 'pages/mobile/home.dart';
-import 'pages/mobile/share/receive.dart';
-import 'pages/mobile/share/share.dart';
-import 'pages/web/article/read.dart';
 import 'pages/web/home.dart';
 
 final GoRouter globalRouter = GoRouter(
@@ -33,14 +28,6 @@ final GoRouter globalRouter = GoRouter(
 
         throw UnsupportedError('Unknown platform: ${Platform.operatingSystem}');
       },
-      routes: <RouteBase>[
-        GoRoute(
-          path: 'tools/svg',
-          builder: (BuildContext context, GoRouterState state) {
-            return WToolsSvgPage(state.pathParameters);
-          },
-        ),
-      ],
     ),
   ],
 );

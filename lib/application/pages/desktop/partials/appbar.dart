@@ -20,7 +20,7 @@ class AppbarWidget extends ConsumerWidget implements PreferredSizeWidget {
       child: Row(
         children: [
           const SizedBox(width: 16,),
-          const Text("Polaris"),
+          const Text("Calieo"),
           const Spacer(),
           const SizedBox(width: 16,),
           const Text("xspanni@gmail.com"),

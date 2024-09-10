@@ -1,4 +1,4 @@
-import 'package:polaris/application/route.dart';
+import 'package:calieo/application/route.dart';
 import 'package:flutter/material.dart';
 
 class HuableApplication extends StatefulWidget {

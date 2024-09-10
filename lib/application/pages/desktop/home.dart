@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:polaris/application/pages/desktop/appbar.dart';
+import 'package:calieo/application/pages/desktop/appbar.dart';
 
 import 'appbody.dart';
 import 'partials/appbar.dart';
@@ -21,7 +21,7 @@ class DHomePage extends ConsumerWidget {
   }
 }
 
-// 旧的polaris桌面首页
+// 旧的calieo桌面首页
 class DOldHomePage extends StatelessWidget {
   const DOldHomePage({super.key});
 

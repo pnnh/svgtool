@@ -1,4 +1,4 @@
-package com.huable.polaris
+package xyz.calieo.svg
 
 import io.flutter.embedding.android.FlutterActivity
 
