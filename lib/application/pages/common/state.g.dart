@@ -20,20 +20,21 @@ final helloWorldProvider = AutoDisposeProvider<String>.internal(
 );
 
 typedef HelloWorldRef = AutoDisposeProviderRef<String>;
-String _$todoListHash() => r'8877587dcbb5ddeb7fdfee359c30edbac2b41e32';
+String _$svgModelStateHash() => r'b049933d21c771f28e60df7fd935b88927951736';
 
-/// See also [TodoList].
-@ProviderFor(TodoList)
-final todoListProvider =
-    AutoDisposeAsyncNotifierProvider<TodoList, List<Todo>>.internal(
-  TodoList.new,
-  name: r'todoListProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$todoListHash,
+/// See also [SvgModelState].
+@ProviderFor(SvgModelState)
+final svgModelStateProvider =
+    AutoDisposeAsyncNotifierProvider<SvgModelState, SvgModel>.internal(
+  SvgModelState.new,
+  name: r'svgModelStateProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$svgModelStateHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$TodoList = AutoDisposeAsyncNotifier<List<Todo>>;
+typedef _$SvgModelState = AutoDisposeAsyncNotifier<SvgModel>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

@@ -15,47 +15,54 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$Todo {
-  String get description => throw _privateConstructorUsedError;
+mixin _$SvgModel {
+  String get text => throw _privateConstructorUsedError;
+  SvgCanvasPainter? get painter => throw _privateConstructorUsedError;
   bool get completed => throw _privateConstructorUsedError;
 
-  /// Create a copy of Todo
+  /// Create a copy of SvgModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $TodoCopyWith<Todo> get copyWith => throw _privateConstructorUsedError;
+  $SvgModelCopyWith<SvgModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TodoCopyWith<$Res> {
-  factory $TodoCopyWith(Todo value, $Res Function(Todo) then) =
-      _$TodoCopyWithImpl<$Res, Todo>;
+abstract class $SvgModelCopyWith<$Res> {
+  factory $SvgModelCopyWith(SvgModel value, $Res Function(SvgModel) then) =
+      _$SvgModelCopyWithImpl<$Res, SvgModel>;
   @useResult
-  $Res call({String description, bool completed});
+  $Res call({String text, SvgCanvasPainter? painter, bool completed});
 }
 
 /// @nodoc
-class _$TodoCopyWithImpl<$Res, $Val extends Todo>
-    implements $TodoCopyWith<$Res> {
-  _$TodoCopyWithImpl(this._value, this._then);
+class _$SvgModelCopyWithImpl<$Res, $Val extends SvgModel>
+    implements $SvgModelCopyWith<$Res> {
+  _$SvgModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Todo
+  /// Create a copy of SvgModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = null,
+    Object? text = null,
+    Object? painter = freezed,
     Object? completed = null,
   }) {
     return _then(_value.copyWith(
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      text: null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
               as String,
+      painter: freezed == painter
+          ? _value.painter
+          : painter // ignore: cast_nullable_to_non_nullable
+              as SvgCanvasPainter?,
       completed: null == completed
           ? _value.completed
           : completed // ignore: cast_nullable_to_non_nullable
@@ -65,35 +72,42 @@ class _$TodoCopyWithImpl<$Res, $Val extends Todo>
 }
 
 /// @nodoc
-abstract class _$$TodoImplCopyWith<$Res> implements $TodoCopyWith<$Res> {
-  factory _$$TodoImplCopyWith(
-          _$TodoImpl value, $Res Function(_$TodoImpl) then) =
-      __$$TodoImplCopyWithImpl<$Res>;
+abstract class _$$SvgModelImplCopyWith<$Res>
+    implements $SvgModelCopyWith<$Res> {
+  factory _$$SvgModelImplCopyWith(
+          _$SvgModelImpl value, $Res Function(_$SvgModelImpl) then) =
+      __$$SvgModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String description, bool completed});
+  $Res call({String text, SvgCanvasPainter? painter, bool completed});
 }
 
 /// @nodoc
-class __$$TodoImplCopyWithImpl<$Res>
-    extends _$TodoCopyWithImpl<$Res, _$TodoImpl>
-    implements _$$TodoImplCopyWith<$Res> {
-  __$$TodoImplCopyWithImpl(_$TodoImpl _value, $Res Function(_$TodoImpl) _then)
+class __$$SvgModelImplCopyWithImpl<$Res>
+    extends _$SvgModelCopyWithImpl<$Res, _$SvgModelImpl>
+    implements _$$SvgModelImplCopyWith<$Res> {
+  __$$SvgModelImplCopyWithImpl(
+      _$SvgModelImpl _value, $Res Function(_$SvgModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Todo
+  /// Create a copy of SvgModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = null,
+    Object? text = null,
+    Object? painter = freezed,
     Object? completed = null,
   }) {
-    return _then(_$TodoImpl(
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+    return _then(_$SvgModelImpl(
+      text: null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
               as String,
+      painter: freezed == painter
+          ? _value.painter
+          : painter // ignore: cast_nullable_to_non_nullable
+              as SvgCanvasPainter?,
       completed: null == completed
           ? _value.completed
           : completed // ignore: cast_nullable_to_non_nullable
@@ -104,26 +118,29 @@ class __$$TodoImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TodoImpl with DiagnosticableTreeMixin implements _Todo {
-  _$TodoImpl({required this.description, this.completed = false});
+class _$SvgModelImpl with DiagnosticableTreeMixin implements _SvgModel {
+  _$SvgModelImpl({required this.text, this.painter, this.completed = false});
 
   @override
-  final String description;
+  final String text;
+  @override
+  final SvgCanvasPainter? painter;
   @override
   @JsonKey()
   final bool completed;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Todo(description: $description, completed: $completed)';
+    return 'SvgModel(text: $text, painter: $painter, completed: $completed)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'Todo'))
-      ..add(DiagnosticsProperty('description', description))
+      ..add(DiagnosticsProperty('type', 'SvgModel'))
+      ..add(DiagnosticsProperty('text', text))
+      ..add(DiagnosticsProperty('painter', painter))
       ..add(DiagnosticsProperty('completed', completed));
   }
 
@@ -131,38 +148,42 @@ class _$TodoImpl with DiagnosticableTreeMixin implements _Todo {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TodoImpl &&
-            (identical(other.description, description) ||
-                other.description == description) &&
+            other is _$SvgModelImpl &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.painter, painter) || other.painter == painter) &&
             (identical(other.completed, completed) ||
                 other.completed == completed));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, description, completed);
+  int get hashCode => Object.hash(runtimeType, text, painter, completed);
 
-  /// Create a copy of Todo
+  /// Create a copy of SvgModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TodoImplCopyWith<_$TodoImpl> get copyWith =>
-      __$$TodoImplCopyWithImpl<_$TodoImpl>(this, _$identity);
+  _$$SvgModelImplCopyWith<_$SvgModelImpl> get copyWith =>
+      __$$SvgModelImplCopyWithImpl<_$SvgModelImpl>(this, _$identity);
 }
 
-abstract class _Todo implements Todo {
-  factory _Todo({required final String description, final bool completed}) =
-      _$TodoImpl;
+abstract class _SvgModel implements SvgModel {
+  factory _SvgModel(
+      {required final String text,
+      final SvgCanvasPainter? painter,
+      final bool completed}) = _$SvgModelImpl;
 
   @override
-  String get description;
+  String get text;
+  @override
+  SvgCanvasPainter? get painter;
   @override
   bool get completed;
 
-  /// Create a copy of Todo
+  /// Create a copy of SvgModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TodoImplCopyWith<_$TodoImpl> get copyWith =>
+  _$$SvgModelImplCopyWith<_$SvgModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

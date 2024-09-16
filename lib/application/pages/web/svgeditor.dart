@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:svgtool/application/pages/common/size.dart';
 import 'package:svgtool/application/pages/common/state.dart';
 
 class WSvgEditorPartial extends ConsumerWidget {
@@ -10,20 +10,23 @@ class WSvgEditorPartial extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      width: 200,
-        height: 200,
-        child:  TextField(
-          obscureText: true,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            labelText: '输入SVG文本',
+      width: AppTheme.rootFontSize * 32,
+      height: AppTheme.rootFontSize * 24,
+      child: TextField(
+        keyboardType: TextInputType.multiline,
+        maxLines: null,
+        expands: true,
+        decoration: InputDecoration(
+          enabledBorder: const OutlineInputBorder(
+            borderSide: const BorderSide(color: Colors.grey, width: 0.0),
           ),
-          onChanged: (value) {
-            ref
-              .read(todoListProvider.notifier)
-              .addTodo(Todo(description: 'This is a new todo'));
-          },
+          border: OutlineInputBorder(),
+          labelText: '输入SVG文本',
         ),
+        onChanged: (value) {
+          ref.read(svgModelStateProvider.notifier).setText(value);
+        },
+      ),
     );
   }
 }

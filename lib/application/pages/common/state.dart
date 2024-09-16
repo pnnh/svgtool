@@ -2,15 +2,19 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 
+import 'painter.dart';
+
 part 'state.freezed.dart';
+
 part 'state.g.dart';
 
 @freezed
-class Todo with _$Todo {
-  factory Todo({
-    required String description,
+class SvgModel with _$SvgModel {
+  factory SvgModel({
+    required String text,
+    SvgCanvasPainter? painter,
     @Default(false) bool completed,
-  }) = _Todo;
+  }) = _SvgModel;
 }
 
 @riverpod
@@ -19,24 +23,24 @@ String helloWorld(HelloWorldRef ref) {
 }
 
 @riverpod
-class TodoList extends _$TodoList {
+class SvgModelState extends _$SvgModelState {
   @override
-  Future<List<Todo>> build() async {
-
-    return [
-      Todo(description: 'Learn Flutter', completed: true),
-      Todo(description: 'Learn Riverpod'),
-    ];
+  Future<SvgModel> build() async {
+    return SvgModel(text: '暂无预览', painter: null);
   }
 
-  Future<void> addTodo(Todo todo) async {
+  Future<void> setText(String text) async {
     debugPrint("addTodo");
 
-    // We decode the API response and convert it to a List<Todo>
-    List<Todo>  newTodos = <Todo>[todo];
-
-    // We update the local cache to match the new state.
-    // This will notify all listeners.
-    state = AsyncData(newTodos);
+    try {
+      var svgPainter = await SvgCanvasPainter.loadSvg('test', text, 1922, 1024);
+      var model = SvgModel(text: text, painter: svgPainter);
+      state = AsyncData(model);
+      return;
+    } catch (ex) {
+      var errMsg = "预览出错：${ex.toString()}";
+      var model = SvgModel(text: errMsg, painter: null);
+      state = AsyncData(model);
+    }
   }
 }

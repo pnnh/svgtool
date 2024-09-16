@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:svgtool/application/pages/common/size.dart';
 import 'package:svgtool/application/pages/web/svgeditor.dart';
 import 'package:svgtool/application/pages/web/svgviewer.dart';
 
@@ -10,7 +11,7 @@ class WHomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return const Scaffold(
+    return Scaffold(
       appBar: WAppBarPartial(),
       body: SafeArea(
         child: WAppBodyPartial(),
@@ -25,10 +26,14 @@ class WAppBodyPartial extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
+      padding: EdgeInsets.only(top: AppTheme.rootFontSize),
       width: double.infinity,
       child: Column(
         children: [
           WSvgEditorPartial(),
+          SizedBox(
+            height: AppTheme.rootFontSize,
+          ),
           WSvgViewerPartial()
         ],
       ),
