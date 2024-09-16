@@ -7,6 +7,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../common/state.dart';
+
 class SvgCanvasPainter {
   final String title;
   final String svg;
@@ -49,26 +51,33 @@ class WSvgViewerPartial extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final AsyncValue<List<Todo>> valueList = ref.watch(todoListProvider);
+
     return Container(
       width: 200,
       height: 200,
       padding: const EdgeInsets.all(16),
-      child: FutureBuilder<SvgCanvasPainter>(
-        future: SvgCanvasPainter.loadSvg('test', 'test', 1922, 1024),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done &&
-              snapshot.data != null) {
-            return Image.memory(
-              snapshot.data!.getImage(),
-              fit: BoxFit.contain,
-            );
-          } else {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-        },
-      ),
+      // child: FutureBuilder<SvgCanvasPainter>(
+      //   future: SvgCanvasPainter.loadSvg('test', 'test', 1922, 1024),
+      //   builder: (context, snapshot) {
+      //     if (snapshot.connectionState == ConnectionState.done &&
+      //         snapshot.data != null) {
+      //       return Image.memory(
+      //         snapshot.data!.getImage(),
+      //         fit: BoxFit.contain,
+      //       );
+      //     } else {
+      //       return const Center(
+      //         child: CircularProgressIndicator(),
+      //       );
+      //     }
+      //   },
+      // ),
+      child: switch (valueList) {
+        AsyncData(:final value) => Text('Activity: ${value.length}'),
+        AsyncError() => const Text('Oops, something unexpected happened'),
+        _ => const CircularProgressIndicator(),
+      },
     );
   }
 }

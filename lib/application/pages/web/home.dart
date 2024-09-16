@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:svgtool/application/pages/web/svgeditor.dart';
 import 'package:svgtool/application/pages/web/svgviewer.dart';
 
 import 'appbar.dart';
@@ -25,7 +26,12 @@ class WAppBodyPartial extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       width: double.infinity,
-      child: WSvgViewerPartial(),
+      child: Column(
+        children: [
+          WSvgEditorPartial(),
+          WSvgViewerPartial()
+        ],
+      ),
     );
   }
 }
