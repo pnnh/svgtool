@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class STWebAppTheme {
   static double rootFontSize = 16.0;
   static Color primaryTextColor = Color(0xFF333333);
+  static Color tipTextColor = Color(0xFF888888);
   static Color primaryColor = Color(0xFF0B99FF);
   static Color normalBorderColor = Color(0xFF666666);
   static Color lightBorderColor = Color(0xFFaaaaaa);

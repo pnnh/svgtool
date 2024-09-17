@@ -15,6 +15,7 @@ class WSvgEditorPartial extends ConsumerWidget {
       padding: EdgeInsets.all(0),
       child: TextField(
         keyboardType: TextInputType.multiline,
+        textAlignVertical: TextAlignVertical.top,
         maxLines: null,
         expands: true,
         decoration: InputDecoration(

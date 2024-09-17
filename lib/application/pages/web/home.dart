@@ -7,6 +7,7 @@ import 'package:svgtool/application/pages/web/svgviewer.dart';
 
 import 'action.dart';
 import 'appbar.dart';
+import 'export.dart';
 
 class WHomePage extends ConsumerWidget {
   const WHomePage({super.key});
@@ -44,7 +45,11 @@ class WAppBodyPartial extends ConsumerWidget {
           SizedBox(
             height: STAppTheme.rootFontSize,
           ),
-          WSvgActionPartial()
+          WSvgActionPartial(),
+          SizedBox(
+            height: STAppTheme.rootFontSize,
+          ),
+          WSvgExportPartial()
         ],
       ),
     );

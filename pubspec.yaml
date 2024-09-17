@@ -36,6 +36,7 @@ dependencies:
   logger: ^2.4.0
   path_provider: ^2.1.4
   freezed_annotation: ^2.4.4
+  assorted_layout_widgets: ^9.0.2
 
 dev_dependencies:
   flutter_lints:

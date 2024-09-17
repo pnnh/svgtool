@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:svgtool/application/pages/web/theme.dart';
-
+import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
 import '../common/size.dart';
 
 class WSvgActionPartial extends ConsumerWidget {
@@ -97,19 +97,37 @@ class WColorPickerPartial extends ConsumerWidget {
           ),
           Text("#"),
           Container(
-            height: STWebAppTheme.rootFontSize,
-            width: 48,
-            decoration: BoxDecoration(
-                border: Border(
-                    bottom: BorderSide(
-                        width: 1, color: STWebAppTheme.normalBorderColor))),
+            height: STWebAppTheme.rootFontSize * 1.5,
+            width: 56,
             child: TextField(
               keyboardType: TextInputType.text,
+              textAlign: TextAlign.start,
+              textAlignVertical: TextAlignVertical.top,
+              maxLines: 1,
+              minLines: 1,
+              maxLength: 6,
               decoration: InputDecoration(
-                enabledBorder: InputBorder.none,
-                border: InputBorder.none,
-              ),
-              style: TextStyle(fontSize: STAppTheme.rootFontSize * 0.5),
+                  enabledBorder: NonUniformOutlineInputBorder(
+                    hideLeftSide: true,
+                    hideTopSide: true,
+                    hideRightSide: true,
+                    borderSide: BorderSide(
+                        color: STWebAppTheme.normalBorderColor, width: 1.0),
+                  ),
+                  focusedBorder: NonUniformOutlineInputBorder(
+                    hideLeftSide: true,
+                    hideTopSide: true,
+                    hideRightSide: true,
+                    borderSide: BorderSide(
+                        color: STWebAppTheme.normalBorderColor, width: 1.0),
+                  ),
+                  isDense: true,
+                  counterText: "",
+                  hintText: "颜色值",
+                  hintStyle: TextStyle(color: STWebAppTheme.tipTextColor),
+                  contentPadding:
+                      EdgeInsets.only(left: 4, right: 4, top: 8, bottom: 8)),
+              style: TextStyle(fontSize: STAppTheme.rootFontSize * 0.8),
               onChanged: (value) {},
             ),
           )
@@ -132,15 +150,6 @@ class WSizePickerPartial extends ConsumerWidget {
           borderRadius: BorderRadius.circular(4)),
       child: Row(
         children: [
-          Container(
-              height: STWebAppTheme.rootFontSize * 1.2,
-              child: Text("8px",
-                  style: TextStyle(
-                    fontSize: STWebAppTheme.rootFontSize * 0.8,
-                  ))),
-          SizedBox(
-            width: 6,
-          ),
           Container(
               height: STWebAppTheme.rootFontSize * 1.2,
               child: Text("16px",
@@ -178,20 +187,40 @@ class WSizePickerPartial extends ConsumerWidget {
             width: 6,
           ),
           Container(
-              height: STWebAppTheme.rootFontSize,
-              width: STWebAppTheme.rootFontSize * 2,
-              decoration: BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                          width: 1, color: STWebAppTheme.normalBorderColor))),
-              child: TextField(
-                decoration: InputDecoration(
-                  enabledBorder: InputBorder.none,
-                  border: InputBorder.none,
-                ),
-                style: TextStyle(fontSize: STAppTheme.rootFontSize * 0.8),
-                onChanged: (value) {},
-              )),
+            height: STWebAppTheme.rootFontSize * 1.5,
+            width: 56,
+            child: TextField(
+              keyboardType: TextInputType.text,
+              textAlign: TextAlign.start,
+              textAlignVertical: TextAlignVertical.top,
+              maxLines: 1,
+              minLines: 1,
+              maxLength: 4,
+              decoration: InputDecoration(
+                  enabledBorder: NonUniformOutlineInputBorder(
+                    hideLeftSide: true,
+                    hideTopSide: true,
+                    hideRightSide: true,
+                    borderSide: BorderSide(
+                        color: STWebAppTheme.normalBorderColor, width: 1.0),
+                  ),
+                  focusedBorder: NonUniformOutlineInputBorder(
+                    hideLeftSide: true,
+                    hideTopSide: true,
+                    hideRightSide: true,
+                    borderSide: BorderSide(
+                        color: STWebAppTheme.normalBorderColor, width: 1.0),
+                  ),
+                  isDense: true,
+                  counterText: "",
+                  hintText: "像素值",
+                  hintStyle: TextStyle(color: STWebAppTheme.tipTextColor),
+                  contentPadding:
+                      EdgeInsets.only(left: 4, right: 4, top: 8, bottom: 8)),
+              style: TextStyle(fontSize: STAppTheme.rootFontSize * 0.8),
+              onChanged: (value) {},
+            ),
+          ),
           SizedBox(
             width: 4,
           ),
