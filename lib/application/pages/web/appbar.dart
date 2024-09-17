@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../common/size.dart';
 
 class WAppBarPartial extends ConsumerWidget implements PreferredSizeWidget {
-  final double appbarHeight = AppTheme.rootFontSize * 4;
+  final double appbarHeight = STAppTheme.rootFontSize * 3;
 
   WAppBarPartial({super.key});
 
@@ -19,7 +19,7 @@ class WAppBarPartial extends ConsumerWidget implements PreferredSizeWidget {
         const Spacer(),
         Text("SVG预览工具",
             style: TextStyle(
-                fontSize: AppTheme.rootFontSize * 1.5,
+                fontSize: STAppTheme.rootFontSize * 1.3,
                 fontWeight: FontWeight.bold)),
         const Spacer(),
       ]),

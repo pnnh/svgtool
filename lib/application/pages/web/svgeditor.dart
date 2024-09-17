@@ -10,8 +10,9 @@ class WSvgEditorPartial extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      width: AppTheme.rootFontSize * 32,
-      height: AppTheme.rootFontSize * 24,
+      width: STAppTheme.rootFontSize * 24,
+      height: STAppTheme.rootFontSize * 12,
+      padding: EdgeInsets.all(0),
       child: TextField(
         keyboardType: TextInputType.multiline,
         maxLines: null,
@@ -23,6 +24,7 @@ class WSvgEditorPartial extends ConsumerWidget {
           border: OutlineInputBorder(),
           labelText: '输入SVG文本',
         ),
+        style: TextStyle(fontSize: STAppTheme.rootFontSize),
         onChanged: (value) {
           ref.read(svgModelStateProvider.notifier).setText(value);
         },

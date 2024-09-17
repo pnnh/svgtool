@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:svgtool/application/pages/common/size.dart';
+import 'package:svgtool/application/pages/web/source.dart';
 import 'package:svgtool/application/pages/web/svgeditor.dart';
 import 'package:svgtool/application/pages/web/svgviewer.dart';
 
+import 'action.dart';
 import 'appbar.dart';
 
 class WHomePage extends ConsumerWidget {
@@ -26,15 +28,23 @@ class WAppBodyPartial extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      padding: EdgeInsets.only(top: AppTheme.rootFontSize),
+      padding: EdgeInsets.all(0),
       width: double.infinity,
       child: Column(
         children: [
+          WFromSourcePartial(),
+          SizedBox(
+            height: STAppTheme.rootFontSize,
+          ),
           WSvgEditorPartial(),
           SizedBox(
-            height: AppTheme.rootFontSize,
+            height: STAppTheme.rootFontSize,
           ),
-          WSvgViewerPartial()
+          WSvgViewerPartial(),
+          SizedBox(
+            height: STAppTheme.rootFontSize,
+          ),
+          WSvgActionPartial()
         ],
       ),
     );
