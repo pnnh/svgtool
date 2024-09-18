@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:async';
 
 import 'package:svgtool/application/pages/common/tools.dart';
-import 'package:svgtool/utils/logger.dart';
 
 class MHomePage extends ConsumerStatefulWidget {
   const MHomePage({super.key});
@@ -64,7 +63,6 @@ class HomePageState extends ConsumerState<MHomePage> {
   }
 
   void _onItemTapped(int index) {
-    logger.d("点击了底部导航栏 $index");
     setState(() {
       _selectedIndex = index;
     });
